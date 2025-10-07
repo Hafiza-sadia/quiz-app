@@ -1,0 +1,146 @@
+/* 🎨 Root Color Variables */
+:root {
+  --hue-neutral: 210;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+  --text-light: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.15);
+}
+
+/* 🌍 General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-light);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a2540, #1b6ca8);
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🩵 Optional overlay for blue tint */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 37, 64, 0.6);
+  z-index: 0;
+}
+
+/* 🧱 Main Container */
+.container {
+  position: relative;
+  z-index: 1;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ✨ Title */
+.quiz-title {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ❓ Question Area */
+.question-con {
+  margin-bottom: 20px;
+}
+
+/* 🔘 Answer Buttons */
+.answer-button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  background: hsl(var(--hue-neutral), 100%, 45%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: hsl(var(--hue-neutral), 100%, 35%);
+  transform: scale(1.05);
+}
+
+/* ✅ Correct & ❌ Wrong Effects */
+.btn.correct {
+  background: hsl(var(--hue-correct), 80%, 40%);
+  box-shadow: 0 0 15px hsl(var(--hue-correct), 80%, 50%);
+}
+
+.btn.wrong {
+  background: hsl(var(--hue-wrong), 80%, 40%);
+  box-shadow: 0 0 15px hsl(var(--hue-wrong), 80%, 50%);
+}
+
+/* 🎮 Control Buttons */
+.control {
+  margin-top: 20px;
+}
+
+.start,
+.next {
+  background: #0077ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 5px;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+}
+
+.start:hover,
+.next:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+}
+
+/* 🏆 Score Display */
+.score {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+/* 🔄 Smooth Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
